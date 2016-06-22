@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+* {
+	font-family: Lora;
+	color: #B1BFEB;
+}
+
+.content {
+	margin-top: 30%;
+}
+
+body {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.summary {
+    font-size: 48px;
+}
+
+.big-text {
+	font-size: 72px;
+}

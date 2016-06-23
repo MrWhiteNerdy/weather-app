@@ -51,18 +51,24 @@ function changeIcon(icon) {
             break;
         case "02d":
             $("html").css("background-image", "url('images/few-clouds-day.jpg')");
+            $(".big-text").css("color", "#191432");
+            $(".small-text").css("color", "#191432");
             break;
         case "02n":
             $("html").css("background-image", "url('images/few-clouds-night.jpg')");
             break;
         case "03d":
             $("html").css("background-image", "url('images/few-clouds-day.jpg')");
+            $(".big-text").css("color", "#191432");
+            $(".small-text").css("color", "#191432");
             break;
         case "03n":
             $("html").css("background-image", "url('images/few-clouds-night.jpg')");
             break;
         case "04d":
             $("html").css("background-image", "url('images/few-clouds-day.jpg')");
+            $(".big-text").css("color", "#191432");
+            $(".small-text").css("color", "#191432");
             break;
         case "04n":
             $("html").css("background-image", "url('images/few-clouds-night.jpg')");
@@ -88,7 +94,7 @@ function changeIcon(icon) {
         case "13d":
             $("html").css("background-image", "url('images/snowy-day.jpg')");
             $(".big-text").css("color", "#1F3E9A");
-            $(".summary").css("color", "#1F3E9A");
+            $(".small-text").css("color", "#1F3E9A");
             break;
         case "13n":
             $("html").css("background-image", "url('images/snowy-night.jpg')");
@@ -96,7 +102,7 @@ function changeIcon(icon) {
         case "50d":
             $("html").css("background-image", "url('images/misty-day.jpg')");
             $(".big-text").css("color", "#1F3E9A");
-            $(".summary").css("color", "#1F3E9A");
+            $(".small-text").css("color", "#1F3E9A");
             break;
         case "50n":
             $("html").css("background-image", "url('images/misty-night.jpg')");

@@ -13,19 +13,29 @@ html {
 	background-size: cover;
 }
 
-.container {
+/*.container {
 	display: table;
-}
+	height: 100%;
+}*/
 
 .content {
-	display: table-cell;
-	vertical-align: middle;
-}
+    width: 500px;
+	height: 300px;
+	text-align: center;
 
-.summary {
-    font-size: 48px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	margin: auto;
 }
 
 .big-text {
-	font-size: 72px;
+	font-size: 3.5em;
+}
+
+.small-text {
+	font-size: 2em;
 }

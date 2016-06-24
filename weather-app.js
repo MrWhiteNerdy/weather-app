@@ -5,20 +5,14 @@ $(document).ready(function() {
 });
 
 function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    $(".container").html("Geolocation is not supported in this browser.");
-  }
-}
+    $.getJSON("http://ipinfo.io", function(data) {
+        var location = data.loc;
+        var array = location.split(",");
+        var latitude = array[0];
+        var longitude = array[1];
 
-function showPosition(position) {
-  var latitude, longitude;
-
-  latitude = position.coords.latitude;
-  longitude = position.coords.longitude;
-
-  getWeatherData(latitude, longitude);
+        getWeatherData(latitude, longitude);
+  });
 }
 
 function getWeatherData(latitude, longitude) {

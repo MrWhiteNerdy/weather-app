@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  getLocation();
+  setInterval(getLocation, 5000);
 });
 
 function getLocation() {

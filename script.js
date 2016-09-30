@@ -44,27 +44,31 @@ function showPosition(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
+    getCity(latitude, longitude);
     getWeatherData(latitude, longitude);
 }
 
 function getWeatherData(latitude, longitude) {
-  var location;
-  var temp;
-  var summary;
-  var icon;
+    var temp;
+    var summary;
+    var icon;
 
-  $.getJSON("http://api.openweathermap.org/data/2.5/weather?appid=ca43cb2e5795fb9346f6c1c78b601089&lat=" + latitude + "&lon=" + longitude + "&units=imperial", function(data) {
-    location = data.name;
-    temp = Math.round(data.main.temp);
-    summary = data.weather[0].main;
-    icon = data.weather[0].icon;
+    $.ajax({
+        url: "https://api.darksky.net/forecast/9bb326b6d66740ee5c8b8f8dd4091d69/" + latitude + "," + longitude,
+        dataType: "jsonp",
+        jsonp: "callback",
+        success: function(data) {
+            temp = Math.round(data.currently.temperature);
+            summary = data.currently.summary;
+            icon = data.currently.icon;
 
-    changeIcon(icon);
+            changeIcon(icon);
 
-    $(".location").html(location);
-    $(".temperature").html(temp + "&deg; F");
-    $(".summary").html(summary);
-  });
+            $(".location").html(city);
+            $(".temperature").html(temp + "&deg; F");
+            $(".summary").html(summary);
+        }
+    })
 }
 
 function changeIcon(icon) {

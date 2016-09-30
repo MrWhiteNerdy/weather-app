@@ -73,69 +73,41 @@ function getWeatherData(latitude, longitude) {
 
 function changeIcon(icon) {
     switch (icon) {
-        case "01d":
+        case "clear-day":
             $("html").css("background-image", "url('images/clear-sky-day.jpg')");
             break;
-        case "01n":
+        case "clear-night":
             $("html").css("background-image", "url('images/clear-sky-night.jpg')");
             break;
-        case "02d":
+        case "partly-cloudy-day":
             $("html").css("background-image", "url('images/few-clouds-day.jpg')");
             $(".big-text").css("color", "#191432");
             $(".small-text").css("color", "#191432");
             break;
-        case "02n":
+        case "partly-cloudy-night":
             $("html").css("background-image", "url('images/few-clouds-night.jpg')");
             break;
-        case "03d":
-            $("html").css("background-image", "url('images/few-clouds-day.jpg')");
-            $(".big-text").css("color", "#191432");
-            $(".small-text").css("color", "#191432");
+        case "sleet":
+            $("html").css("background-image", "url('images/sleet.jpg')");
             break;
-        case "03n":
-            $("html").css("background-image", "url('images/few-clouds-night.jpg')");
+        case "wind":
+            $("html").css("background-image", "url('images/wind.jpg')");
             break;
-        case "04d":
-            $("html").css("background-image", "url('images/few-clouds-day.jpg')");
-            $(".big-text").css("color", "#191432");
-            $(".small-text").css("color", "#191432");
+        case "fog":
+            $("html").css("background-image", "url('images/fog.jpg')");
             break;
-        case "04n":
-            $("html").css("background-image", "url('images/few-clouds-night.jpg')");
+        case "cloudy":
+            $("html").css("background-image", "url('images/cloudy.jpg')");
             break;
-        case "09d":
+        case "rain":
             $("html").css("background-image", "url('images/rainy-day.jpg')");
             break;
-        case "09n":
-            $("html").css("background-image", "url('images/rainy-night.jpg')");
-            break;
-        case "10d":
-            $("html").css("background-image", "url('images/rainy-day.jpg')");
-            break;
-        case "10n":
-            $("html").css("background-image", "url('images/rainy-night.jpg')");
-            break;
-        case "11d":
-            $("html").css("background-image", "url('images/thunderstorm-day.jpg')");
-            break;
-        case "11n":
-            $("html").css("background-image", "url('images/thunderstorm-night.jpg')");
-            break;
-        case "13d":
+        case "snow":
             $("html").css("background-image", "url('images/snowy-day.jpg')");
             $(".big-text").css("color", "#1F3E9A");
             $(".small-text").css("color", "#1F3E9A");
             break;
-        case "13n":
-            $("html").css("background-image", "url('images/snowy-night.jpg')");
-            break;
-        case "50d":
-            $("html").css("background-image", "url('images/misty-day.jpg')");
-            $(".big-text").css("color", "#1F3E9A");
-            $(".small-text").css("color", "#1F3E9A");
-            break;
-        case "50n":
-            $("html").css("background-image", "url('images/misty-night.jpg')");
-            break;
+        default:
+            
     }
 }

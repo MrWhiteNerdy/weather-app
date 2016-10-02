@@ -13,11 +13,6 @@ html {
 	background-size: cover;
 }
 
-/*.container {
-	display: table;
-	height: 100%;
-}*/
-
 .content {
     width: 500px;
 	height: 300px;
@@ -38,4 +33,9 @@ html {
 
 .small-text {
 	font-size: 2em;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
 }

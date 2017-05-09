@@ -1,3 +1,7 @@
+$(window).load(function(){
+	$(".loader").fadeOut("slow");
+});
+
 $(document).ready(function() {
     initialize();
     getLocation();

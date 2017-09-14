@@ -65,7 +65,7 @@ function getWeatherData(latitude, longitude) {
 }
 
 function setIcon(icon) {
-    let skycons = new Skycons();
+    let skycons = new Skycons({"color": "#3937AA;"});
     skycons.add("icon", icon);
     skycons.play();
 }

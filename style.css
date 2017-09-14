@@ -1,5 +1,9 @@
 body {
-    background-color: #dfacff;
+    background-color: #CCCBF6;
+}
+
+* {
+    color: #3937AA;
 }
 
 .loader {

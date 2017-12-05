@@ -56,16 +56,48 @@ function getWeatherData(latitude, longitude) {
     dataType: "jsonp",
     jsonp: "callback",
     success: function (data) {
+      const forecast = document.getElementById('forecast');
+
+      forecast.innerHTML = '';
       $(".location").html(city);
       $(".temperature").html(Math.round(data.currently.temperature) + "&deg; F");
       $(".summary").html(data.currently.summary);
-      setIcon(data.currently.icon);
+      setIcon("main-icon", data.currently.icon);
+
+      for (let i = 1; i < 4; i++) {
+        let html = `
+          <div class="col s8 offset-s2 m4">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">${getDate(data.daily.data[i].time)}</span>
+                <p>${Math.round(data.daily.data[i].temperatureLow)} / ${Math.round(data.daily.data[i].temperatureHigh)}&deg; F</p>
+                <canvas id="icon-${i}" class="icon" width="64" height="64"></canvas>
+              </div>
+            </div>
+          </div>
+        `;
+        forecast.innerHTML += html;
+
+        for (let i = 1; i < 4; i++) {
+          setIcon(`icon-${i}`, data.daily.data[i].icon);
+        }
+      }
     }
   });
 }
 
-function setIcon(icon) {
+function setIcon(id, icon) {
   let skycons = new Skycons({"color": "#3937AA;"});
-  skycons.add("icon", icon);
+  if (icon === 'partly-cloudy-night') {
+    skycons.add(id, 'clear-day');
+  } else {
+    skycons.add(id, icon);
+  }
   skycons.play();
+}
+
+function getDate(unixTime) {
+  const date = new Date(unixTime * 1000);
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return days[date.getDay()];
 }

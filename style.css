@@ -17,3 +17,11 @@ main {
   z-index: 9999;
   background: url('images/spinner.gif') 50% 50% no-repeat rgb(255, 255, 255);
 }
+
+#forecast {
+  margin-top: 20px;
+}
+
+.icon {
+  margin-top: 10px;
+}

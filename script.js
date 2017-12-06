@@ -68,7 +68,7 @@ function getWeatherData(latitude, longitude) {
         let html = `
           <div class="col s8 offset-s2 m4">
             <div class="card">
-              <div class="card-content">
+              <div class="card-content center-align">
                 <span class="card-title">${getDate(data.daily.data[i].time)}</span>
                 <p>${Math.round(data.daily.data[i].temperatureLow)} / ${Math.round(data.daily.data[i].temperatureHigh)}&deg; F</p>
                 <canvas id="icon-${i}" class="icon" width="64" height="64"></canvas>
